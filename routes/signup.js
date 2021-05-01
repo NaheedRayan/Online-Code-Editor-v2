@@ -2,6 +2,8 @@ const express = require("express");
 let router = express.Router();
 
 
+
+
 router.route('/')
     .get((req, res) => {
         console.log("inside signup.js GET");

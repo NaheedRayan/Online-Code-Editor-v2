@@ -9,6 +9,11 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
 
+// for POST requests from the form
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+
 // for home route
 const home = require('./routes/home')
 app.use("/home" , home )
