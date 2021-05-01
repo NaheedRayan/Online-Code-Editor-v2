@@ -1,0 +1,109 @@
+body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    background-color: black;
+}
+
+.box {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 100%;
+}
+
+.box .header {
+    flex: 0 1 auto;
+}
+
+.box .main {
+    flex: 1 1 auto;
+    width: 100%;
+
+    display: grid;
+    place-items: center;
+}
+
+.box .footer {
+    flex: 0 1 40px;
+}
+
+.box .main .card {
+    width: 50%;
+    padding: 5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.box .main .card .signup {
+    font-size: xx-large;
+    font-weight: bold;
+
+}
+.box .main {
+    color: white;
+
+}
+.box .main .card {
+    background-color: rgb(29, 29, 29);
+}
+
+.footer .banner {
+    margin-top:10px;
+    margin-bottom:9px;   
+}
+
+
+
+
+@media only screen and (max-width: 1000px) {
+    body {
+        height: 100vh;
+        width: 100%;
+        margin: 0;
+        background-color: black;
+    }
+
+    .box {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+        width: 100%;
+    }
+    .box .header {
+        flex: 0 1 auto;
+    }
+
+    .box .main {
+        flex: 1 1 auto;
+        width: 100%;
+
+        display: grid;
+        place-items: center;
+    }
+
+    .box .footer {
+        flex: 0 1 auto;
+    }
+    .box .main .card {
+        width: 100%;
+        padding: 5%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .box .main .card .signup {
+        font-size: xx-large;
+        font-weight: bold;
+    }
+    .box .main {
+        color: white;
+    }
+    .box .main .card {
+        background-color: rgb(29, 29, 29);
+    }
+    .footer .banner {
+        margin-top:10px;
+        margin-bottom:9px;   
+    }
+}
