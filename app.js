@@ -1,9 +1,18 @@
 const express = require('express')
 const app = express()
+var flash = require('connect-flash');
 const port = 3000
 
 // for using css 
 app.use(express.static(__dirname + '/public'));
+
+app.use(flash());
+
+var session = require('express-session');
+app.use(session({ cookie: { maxAge: 60000 }, 
+                  secret: 'woot',
+                  resave: false, 
+                  saveUninitialized: false}));
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
