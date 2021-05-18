@@ -32,12 +32,13 @@ router.route('/')
 
             let username = req.body.username;
             let email = req.body.email;
+            let password = req.body.password;
 
             const result1 = db.getUsername(username);
             const result2 = db.getEmail(email);
 
             // getting all the promises and then processing it
-            Promise.all([result1, result2]).then(data => {    
+            Promise.all([result1, result2]).then(data => {
 
                     if (data[0].length && data[1].length == 0) {
                         console.log(data[0]);
@@ -51,14 +52,25 @@ router.route('/')
                         console.log(data[1]);
                         req.flash("error", "The username and email already exists!!");
                         res.redirect("/signup");
-                    } 
-                    else if (req.body.password != req.body.confirm_password) {
+                    } else if (req.body.password != req.body.confirm_password) {
                         req.flash("error", "Passwords do not match");
                         res.redirect("/signup");
-                    }
-                    else {
-                        req.flash("success", "User successfully registered");
-                        res.redirect("/home")
+                    } else {
+                        let val = [
+                            [username, email, password]
+                        ];
+                        let result = db.saveNewUserData(val);
+                        result
+                            .then(data => {
+                                console.log(data)
+                                req.flash("success", "User successfully registered");
+                                res.redirect("/home")
+                            })
+                            .catch(err => {
+                                console.log(err);
+                                res.redirect("/signup");
+                            })
+                            
                     }
 
                 })
