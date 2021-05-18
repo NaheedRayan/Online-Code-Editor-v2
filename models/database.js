@@ -77,6 +77,23 @@ class DbServices{
             console.log(error);
         }
     }
+
+
+    async saveNewUserData(userData){
+        try {
+            const response = await new Promise((resolve, reject)=>{
+                const query = "INSERT INTO User (username, email ,password) VALUES ?" ;
+                db.query(query , [userData] , (err , results) => {
+                    if(err) reject(new Error(err.message));
+                    resolve(results);
+                })
+            })
+            return response;
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
 
 
