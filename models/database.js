@@ -42,6 +42,41 @@ class DbServices{
             
         }
     }
+
+    async getEmail(email){
+        try{
+            const response = await new Promise((resolve, reject)=>{
+                
+                const query = "SELECT * FROM User WHERE email = ? LIMIT 1";
+                db.query(query , [email] , (err , results) => {
+                    if(err) reject(new Error(err.message));
+                    resolve(results);
+                })
+            })
+
+            return response;
+
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+    async getUsername(username){
+        try{
+            const response = await new Promise((resolve, reject)=>{
+                
+                const query = "SELECT * FROM User WHERE username = ? LIMIT 1";
+                db.query(query , [username] , (err , results) => {
+                    if(err) reject(new Error(err.message));
+                    resolve(results);
+                })
+            })
+            return response;
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 
