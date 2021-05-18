@@ -42,6 +42,22 @@ class DbServices{
             
         }
     }
+    async getUsername(username){
+        try{
+            const response = await new Promise((resolve, reject)=>{
+                
+                const query = "SELECT * FROM User WHERE username = ? LIMIT 1";
+                db.query(query , [username] , (err , results) => {
+                    if(err) reject(new Error(err.message));
+                    resolve(results);
+                })
+            })
+            return response;
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
 
     async getEmail(email){
         try{
@@ -61,6 +77,7 @@ class DbServices{
             console.log(error);
         }
     }
+
     async getUsername(username){
         try{
             const response = await new Promise((resolve, reject)=>{
@@ -77,6 +94,23 @@ class DbServices{
             console.log(error);
         }
     }
+    async getPassword_for_email_or_username(username_or_email , password){
+        try{
+            const response = await new Promise((resolve, reject)=>{
+                
+                const query = "SELECT * FROM User WHERE (username = ? OR email = ?) AND password = ? LIMIT 1";
+                db.query(query , [username_or_email , username_or_email, password] , (err , results) => {
+                    if(err) reject(new Error(err.message));
+                    resolve(results);
+                })
+            })
+            return response;
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+    
 
 
     async saveNewUserData(userData){
