@@ -10,17 +10,13 @@ router.route('/')
         console.log("inside signup.js GET");
         res.render("pages/signup");
 
-        const db = DbService.getServiceInstance();
-
-
-        const result = db.getAllData();
-        result
-            .then(data => {
-                console.log(data)
-            })
-            .catch(err => console.log(err))
-
-
+        // const db = DbService.getServiceInstance();
+        // const result = db.getAllData();
+        // result
+        //     .then(data => {
+        //         console.log(data)
+        //     })
+        //     .catch(err => console.log(err))
 
     })
     .post((req, res) => {
@@ -70,7 +66,7 @@ router.route('/')
                                 console.log(err);
                                 res.redirect("/signup");
                             })
-                            
+
                     }
 
                 })
