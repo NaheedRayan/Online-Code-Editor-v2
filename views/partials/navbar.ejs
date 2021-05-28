@@ -65,21 +65,17 @@
                 </li>
             </ul>
             <div class="d-flex">
-                <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-                <div class="nav-link me-2 " role="button" style="color: azure;" onclick="route_to_signin()">Login</div>
-                <button class="btn btn-primary" onclick="route_to_signup()">Get Started</button>
 
-                <script>
-                    function route_to_signin() {
-                        window.location.href = location.protocol + "//" + location.host + "/signin";
-                    }
-
-                    function route_to_signup() {
-                        window.location.href = location.protocol + "//" + location.host + "/signup";
-                    }
-                </script>
-
-
+                <!-- if the user is authenticated then this user will have an object -->
+                <% if (user) { %>
+                    <a class="profile_button" href="#">Profile</a>
+                    <a class="logout_button" href="/logout">Logout</a>
+                <% } else { %>
+                    <a class="signin_button" href="/signin">Login</a>
+                    <a class="signup_button" href="/signup">Get Started</a>
+                <% } %>
+               
+         
             </div>
         </div>
     </div>

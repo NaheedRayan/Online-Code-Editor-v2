@@ -58,6 +58,22 @@ class DbServices{
             console.log(error);
         }
     }
+    async getUserById(id){
+        try{
+            const response = await new Promise((resolve, reject)=>{
+                
+                const query = "SELECT * FROM User WHERE id = ? LIMIT 1";
+                db.query(query , [id] , (err , results) => {
+                    if(err) reject(new Error(err.message));
+                    resolve(results);
+                })
+            })
+            return response;
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
 
     async getEmail(email){
         try{

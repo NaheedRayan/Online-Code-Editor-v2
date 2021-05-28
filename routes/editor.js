@@ -3,10 +3,12 @@ let router = express.Router();
 
 
 
-router.get("/" , (req, res) => {
-    console.log("inside home.js")
-    res.render("pages/home");
+router.get("/",isLoggedIn, (req, res) => {
+    console.log("inside editor.js")
+    res.render("pages/editor");
 })
+
+
 
 
 // route middleware to make sure
@@ -17,8 +19,6 @@ function isLoggedIn(req, res, next) {
 	// if they aren't redirect them to the home page
 	res.redirect('/');
 }
-
-
 
 
 
