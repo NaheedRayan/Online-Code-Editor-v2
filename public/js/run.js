@@ -86,15 +86,23 @@ document.querySelector(".run_button").addEventListener("click", (e) => {
     // console.log(myJson)
 
     // "http://localhost:8080/submit"
+    
+    // require('dotenv').config({path: __dirname + '/.env'})
 
-    fetch("http://192.168.43.152:8080/submit", {
+    // var server_link = process.env.SERVER_LINK;
+    var server_link = "http://52.172.231.206:8080/submit" ;
+    // var server_link = "http://192.168.43.152:8080/submit" ; //localhost
+
+    fetch(server_link, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
     }).then(res => {
+        
         console.log(res)
+        console.log(res.ok)
         return res.text()
     }).then(data => {
         // console.log(data)
@@ -148,7 +156,7 @@ function output_link(data_link) {
                 }
 
             })
-    }, 500)
+    }, 200)
 
 
 

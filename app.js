@@ -1,5 +1,6 @@
 // app.js
 
+require('dotenv').config()
 // set up ======================================================================
 // get all the tools we need
 const express = require('express')
@@ -9,7 +10,7 @@ const cookieParser = require('cookie-parser');
 const passport = require('passport')
 const session = require('express-session');
 // const DbService = require("./models/database");
-const port = 3000
+const port = process.env.PORT
 
 // configuration ===============================================================
 
@@ -88,6 +89,6 @@ app.get('/', (req, res) => {
 
 
 
-app.listen(port, () => {
+app.listen(port,"0.0.0.0", () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
