@@ -67,6 +67,7 @@ app.get('/logout', (req,res)=>{
 // for home route
 const home = require('./routes/home')
 app.use("/home", home)
+app.use("/", home)
 
 // for signup route
 const signup = require('./routes/signup')
@@ -82,10 +83,10 @@ app.use("/editor", editor)
 
 
 
-app.get('/', (req, res) => {
-    res.send("FROM THE SERVER")
-    // res.render("pages/home");
-})
+// app.get('/', (req, res) => {
+//     res.send("FROM THE SERVER")
+//     // res.render("pages/home");
+// })
 
 
 
