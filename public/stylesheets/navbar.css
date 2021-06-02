@@ -1,3 +1,5 @@
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+
 main {
     box-sizing: border-box;
     /* border-top: 1px solid rgb(129, 129, 129); */
@@ -113,5 +115,32 @@ main {
 }
 
 .profile_button:visited {
+    color:white;
+}
+
+.fi-rr-user {
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    padding: .5em 1em;
+    text-decoration: none;
+    background-color:  rgb(45, 146, 212);
+    color: white;
+    border-radius: 5px;
+    margin-left: .5em;
+    /* height:50px;
+    width:50px; */
+}
+
+.fi-rr-user:hover {
+    background-color: rgb(54, 125, 172);
+    color: white;
+}
+
+.fi-rr-user:active{
+    color:white;
+}
+
+.fi-rr-user:visited {
     color:white;
 }

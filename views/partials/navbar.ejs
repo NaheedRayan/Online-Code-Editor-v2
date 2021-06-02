@@ -2,7 +2,7 @@
 
 
     <div class="container-fluid ">
-        <a class="navbar-brand" href="/home">Execution</a>
+        <a class="navbar-brand" href="/home">Titan Compiler</a>
 
         <!-- toggle button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -68,7 +68,8 @@
 
                 <!-- if the user is authenticated then this user will have an object -->
                 <% if (user) { %>
-                    <a class="profile_button" href="#">Profile</a>
+                    <!-- <a class="profile_button" href="#">Profile</a> -->
+                    <i class="fi-rr-user" href="#"></i>
                     <a class="logout_button" href="/logout">Logout</a>
                 <% } else { %>
                     <a class="signin_button" href="/signin">Login</a>

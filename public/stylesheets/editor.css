@@ -1,3 +1,6 @@
+
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+
 :root {
     /* font-size: 16px; */
     font-family: "B612", serif;
@@ -179,6 +182,20 @@ body {
 
 }
 
+.fi-rr-interrogation{
+    height: 100%;
+    width: 2em;
+    font-size: 20px;;
+    
+    display: grid ;
+    place-items: center;
+    margin-left: auto;
+    cursor: pointer;
+}
+.fi-rr-interrogation:hover{
+    color:#80c8f8;
+}
+
 .about {
     background-color: var(--dracula);
     border: 1px solid var(--border-color);
@@ -322,19 +339,22 @@ body {
     border: 1px solid var(--border-color);
     color: var(--text-primary);
 
+    display: grid;
+    place-items: center;
 
     font-size: 12px;
+    height: 80%;
+    padding-left: 10px;
+    padding-right: 10px;
 
     border-radius: 5px;
-    padding-bottom: 3px;
-    padding-top: 3px;
-    padding-left: 8px;
-    padding-right: 8px;
     margin-left: 15px;
 
     cursor: pointer;
+}
 
-
+.hide_stdin:hover{
+    color:#3498db;
 }
 
 .language {
@@ -345,14 +365,15 @@ body {
     border: 1px solid var(--border-color);
     color: #5e5e5e;
 
-    font-size: 12px;
+    display: grid;
+    place-items: center;
 
+    font-size: 12px;
+    height: 80%;
+    
 
     border-radius: 5px 0px 0px 5px;
-    padding-bottom: 3px;
-    padding-top: 3px;
-    padding-left: 8px;
-    padding-right: 8px;
+   
     margin-left: auto;
 
     cursor: pointer;
@@ -365,36 +386,60 @@ body {
     border: 1px solid var(--border-color);
     color: var(--text-primary);
 
+    display: grid;
+    place-items: center;
 
     font-size: 12px;
-
-    padding-bottom: 3px;
-    padding-top: 3px;
-    padding-left: 8px;
-    padding-right: 8px;
+    height: 80%;
+    width: 5em;
 
     cursor: pointer;
-
-
-
+}
+.load:hover{
+    color:#3498db;
 }
 
-.setting {
+.fi-rr-settings {
     box-sizing: border-box;
     border: 1px solid var(--border-color);
     color: var(--text-primary);
+    height: 80%;
+    width: 2em;
 
+    display: grid ;
+    place-items: center;
+    font-size: 16px;
 
-    font-size: 12px;
-
-    padding-bottom: 3px;
+    /* padding-bottom: 3px;
     padding-top: 3px;
     padding-left: 8px;
-    padding-right: 8px;
+    padding-right: 8px; */
 
     cursor: pointer;
+}
+.fi-rr-settings:hover{
+    color:#3498db;
+}
+.fi-rr-disk {
+    box-sizing: border-box;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    height: 80%;
+    width: 2em;
 
+    display: grid ;
+    place-items: center;
+    font-size: 16px;
 
+    /* padding-bottom: 3px;
+    padding-top: 3px;
+    padding-left: 8px;
+    padding-right: 8px; */
+
+    cursor: pointer;
+}
+.fi-rr-disk:hover{
+    color:#3498db;
 }
 
 .run_button {
@@ -403,19 +448,17 @@ body {
     /* border: 1px solid var(--border-color); */
     color: var(--text-primary);
 
+    display: grid;
+    place-items: center;
 
     font-size: 12px;
+    height: 80%;
+    width: 5em;
 
     border-radius: 0px 5px 5px 0px;
-    padding-bottom: 3px;
-    padding-top: 3px;
-    padding-left: 8px;
-    padding-right: 8px;
-
     margin-right: 15px;
 
     cursor: pointer;
-
 }
 
 
@@ -752,6 +795,8 @@ body {
 
     .editor {
 
+        font-size:12px !important;
+
         position: absolute;
         width: 100% !important; 
         height: 93% !important;
@@ -824,6 +869,8 @@ body {
 
 
     .stdin_area {
+
+        font-size:12px !important;
 
         position: absolute;
         width: 100% !important;
@@ -992,6 +1039,8 @@ body {
     .output {
         background-color: var(--dracula);
         color: var(--text-primary);
+
+        font-size:12px !important;
 
         height: 87%;
         width: 100%;
