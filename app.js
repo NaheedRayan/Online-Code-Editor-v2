@@ -82,6 +82,9 @@ app.use("/signin", signin)
 const editor = require('./routes/editor')
 app.use("/editor", editor)
 
+//for price route
+const price = require('./routes/price')
+app.use("/price", price)
 
 
 // app.get('/', (req, res) => {
