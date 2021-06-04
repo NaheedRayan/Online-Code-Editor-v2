@@ -1,0 +1,199 @@
+body{
+    background-color: black;
+    color: white;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
+
+/* for  header,main and footer position and sizing */
+.box {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 100%;
+}
+
+.box .header {
+    flex: 0 1 auto;
+}
+
+.box .main {
+    
+    flex: 1 1 auto;
+    width: 100%;
+    
+    
+}
+
+.box .footer {
+    flex: 0 1 40px;
+}
+
+.firstText{
+    font-size: 45px;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+    
+}
+.sndtext{
+    font-size: 25px;
+    font-weight: bold;
+    text-align:center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* for price grid  */
+.price-grid{
+    display: grid;
+    gap: 1rem;
+    align-items: center;
+    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+
+}
+
+
+/* for card  */
+.card1{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background: #353535;
+    color: white;
+    box-shadow: rgb(51, 51, 51);
+    border-radius: 4px;
+    overflow: hidden;
+    text-align: center !important;
+    padding-top: 10px;
+    height: 480px;
+
+    
+}
+
+.card1:hover{
+    transform: translateY(-3px) scale(1.01);
+}
+/* for brand  */
+
+.brandtext1{
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.card2{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+.brandcard{
+    display: grid;
+    gap: 1rem;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+
+}
+
+.dis-text{
+    text-align: center;
+    border: 2px solid #a5a5a5;
+    padding: 25px 10px;
+    border-radius: 8px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+.text1{
+    padding-bottom: 2%;
+}
+.faq{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+.topfaq{
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+/*media*/
+@media only screen and (max-width: 830px) {
+    .firstText{
+        font-size: 25px;
+        font-weight: bolder;
+        text-align: center;
+        margin-top: 15px;
+        margin-left: 5%;
+        margin-right: 5%;
+        
+    }
+    .sndtext{
+        font-size: 14px;
+        font-weight: bold;
+        text-align:center;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    body {
+        height: 100vh;
+        width: 100%;
+        margin: 0;
+        background-color: black;
+    }
+
+    .box {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+        width: 100%;
+    }
+    .box .header {
+        flex: 0 1 auto;
+    }
+
+    .box .main {
+    
+        flex: 1 1 auto;
+        width: 100%;
+
+        
+    }
+
+    .box .footer {
+        flex: 0 1 auto;
+    }
+
+
+     /* for brand img */
+     .brandcard{
+        display: grid;
+        gap: 1rem;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+        margin-top: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 5%;
+     }
+    .card2 img{
+        height: 80px;
+        width: 100px;
+    }
+
+}
