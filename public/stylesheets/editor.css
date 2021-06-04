@@ -1,4 +1,3 @@
-
 @import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
 
 :root {
@@ -14,6 +13,7 @@
     --border-color: rgb(68, 68, 68);
 
 }
+
 body {
     height: 100vh;
     width: 100%;
@@ -42,7 +42,7 @@ body {
     padding-bottom: 15px;
     padding-left: 10px;
     padding-right: 10px;
-    
+
 }
 
 
@@ -151,7 +151,7 @@ body {
     top: 1px;
     z-index: -1;
 
-/* 
+    /* 
     border-left: 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
     border-top: 1px solid var(--border-color);
@@ -182,18 +182,20 @@ body {
 
 }
 
-.fi-rr-interrogation{
+.fi-rr-interrogation {
     height: 100%;
     width: 2em;
-    font-size: 20px;;
-    
-    display: grid ;
+    font-size: 20px;
+    ;
+
+    display: grid;
     place-items: center;
     margin-left: auto;
     cursor: pointer;
 }
-.fi-rr-interrogation:hover{
-    color:#80c8f8;
+
+.fi-rr-interrogation:hover {
+    color: #80c8f8;
 }
 
 .about {
@@ -321,8 +323,8 @@ body {
 /* the bottom banner */
 .banner {
 
-    font-size:xx-small;
-    color:white;
+    font-size: xx-small;
+    color: white;
     background-color: var(--dracula);
     height: 3%;
     width: 100%;
@@ -353,8 +355,8 @@ body {
     cursor: pointer;
 }
 
-.hide_stdin:hover{
-    color:#3498db;
+.hide_stdin:hover {
+    color: #3498db;
 }
 
 .language {
@@ -370,10 +372,10 @@ body {
 
     font-size: 12px;
     height: 80%;
-    
+
 
     border-radius: 5px 0px 0px 5px;
-   
+
     margin-left: auto;
 
     cursor: pointer;
@@ -395,8 +397,9 @@ body {
 
     cursor: pointer;
 }
-.load:hover{
-    color:#3498db;
+
+.load:hover {
+    color: #3498db;
 }
 
 .fi-rr-settings {
@@ -406,7 +409,7 @@ body {
     height: 80%;
     width: 2em;
 
-    display: grid ;
+    display: grid;
     place-items: center;
     font-size: 16px;
 
@@ -417,9 +420,11 @@ body {
 
     cursor: pointer;
 }
-.fi-rr-settings:hover{
-    color:#3498db;
+
+.fi-rr-settings:hover {
+    color: #3498db;
 }
+
 .fi-rr-disk {
     box-sizing: border-box;
     border: 1px solid var(--border-color);
@@ -427,7 +432,7 @@ body {
     height: 80%;
     width: 2em;
 
-    display: grid ;
+    display: grid;
     place-items: center;
     font-size: 16px;
 
@@ -438,8 +443,9 @@ body {
 
     cursor: pointer;
 }
-.fi-rr-disk:hover{
-    color:#3498db;
+
+.fi-rr-disk:hover {
+    color: #3498db;
 }
 
 .run_button {
@@ -472,7 +478,7 @@ body {
     display: flex;
     align-items: center;
 
-    border-radius: 0 10px 0 0 ;
+    border-radius: 0 10px 0 0;
 
     box-sizing: border-box;
     border-bottom: 1px dashed var(--border-color);
@@ -602,28 +608,28 @@ body {
         height: 100%;
         width: 100%;
     }
-    
+
     .bigbox .header {
         flex: 0 1 auto;
     }
-    
+
     .bigbox .main {
         flex: 1 1 auto;
         width: 100%;
         height: 100%;
-    
+
         background-color: black;
         padding-top: 5px;
         padding-bottom: 10px;
         padding-left: 5px;
         padding-right: 5px;
-        
+
     }
 
     .box {
         /* background-color: var(--dracula); */
 
-        height: 100% ;
+        height: 100%;
         width: 100%;
 
         /* top: 25px;
@@ -672,10 +678,10 @@ body {
         border-radius: 10px 10px 0px 0px;
 
         cursor: pointer;
-        font-size:small;
+        font-size: small;
     }
 
-   
+
     .box .box_options .filename2 {
         background-color: black;
         color: white;
@@ -701,11 +707,11 @@ body {
 
 
         cursor: pointer;
-        font-size:small;
+        font-size: small;
 
     }
 
-   
+
 
     .box .box_options .filename3 {
         background-color: black;
@@ -732,10 +738,10 @@ body {
 
 
         cursor: pointer;
-        font-size:small;
+        font-size: small;
 
     }
-   
+
 
 
     .min_max_button {
@@ -795,10 +801,10 @@ body {
 
     .editor {
 
-        font-size:12px !important;
+        font-size: 12px !important;
 
         position: absolute;
-        width: 100% !important; 
+        width: 100% !important;
         height: 93% !important;
         top: 0 !important;
         left: 0;
@@ -870,7 +876,7 @@ body {
 
     .stdin_area {
 
-        font-size:12px !important;
+        font-size: 12px !important;
 
         position: absolute;
         width: 100% !important;
@@ -900,8 +906,8 @@ body {
 
     /* the bottom banner */
     .banner {
-        font-size:xx-small;
-        color:white;
+        font-size: xx-small;
+        color: white;
         background-color: var(--dracula);
         height: 3%;
         width: 100%;
@@ -1040,7 +1046,7 @@ body {
         background-color: var(--dracula);
         color: var(--text-primary);
 
-        font-size:12px !important;
+        font-size: 12px !important;
 
         height: 87%;
         width: 100%;
@@ -1149,6 +1155,3 @@ body {
     }
 
 }
-
-
-

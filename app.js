@@ -17,6 +17,7 @@ const port = process.env.PORT
 // require('./passport-config')(passport); // pass passport for configuration
 // for using css 
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/images'));
 
 
 // set up our express application
