@@ -1,3 +1,6 @@
+/* for icon packs */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
 body {
     height: 100vh;
     width: 100%;
@@ -53,7 +56,23 @@ body {
     margin-bottom:9px;   
 }
 
+/* for icons */
+.social {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer
+}
 
+.social:hover {
+    background-color: #0d6efd;
+    border-color: #0d6efd
+}
 
 
 @media only screen and (max-width: 1000px) {
@@ -106,4 +125,5 @@ body {
         margin-top:10px;
         margin-bottom:9px;   
     }
+    
 }
