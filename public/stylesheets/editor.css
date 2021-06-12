@@ -638,7 +638,7 @@ body {
     }
     @media only screen and (max-height: 500px) {
         .box_options{
-            height: 10% !important;
+            height: 7% !important;
         }
     }
 
@@ -745,7 +745,7 @@ body {
     @media only screen and (max-height: 500px) {
 
         .box-area {
-            height: 87% !important;
+            height: 90% !important;
         }
     }
 
@@ -780,7 +780,7 @@ body {
 
     @media only screen and (max-height: 500px) {
         .editor {
-            height: 85% !important;
+            height: 88% !important;
         }
     }
 
@@ -841,8 +841,8 @@ body {
 
     @media only screen and (max-height: 500px) {
         .options_menu {
-            height: 15% !important;
-            top: 85% !important;
+            height: 12% !important;
+            top: 88% !important;
         }
     }
     .stdin_area {
@@ -871,8 +871,8 @@ body {
 
     @media only screen and (max-height: 500px) {
         .stdin_area {
-            height: 85% !important;
-            bottom: 15% !important;
+            height: 88% !important;
+            bottom: 12% !important;
         }
     }
 
@@ -891,7 +891,7 @@ body {
 
     @media only screen and (max-height: 500px) {
         .stdout_area {
-            height: 85% !important;
+            height: 88% !important;
         }
     }
 
@@ -1061,7 +1061,7 @@ body {
 
     @media only screen and (max-height: 500px) {
         .output {
-            height: 72% !important;
+            height: 80% !important;
         }
     }
 
@@ -1079,7 +1079,7 @@ body {
 
     @media only screen and (max-height: 500px) {
         .right_bottombar {
-            height: 14% !important;
+            height: 8% !important;
         }
     }
 
