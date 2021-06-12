@@ -135,28 +135,46 @@ function output_link(data_link) {
             })
             .then(data => {
 
-                if (data.output) {
+                console.log(data.status);
+
+
+                if(data.status == "Successful"){
                     console.log(data);
                     clearInterval(myvar);
                     output.innerHTML = data.output;
                     $(".success").html(data.status);
-                    $(".loader").hide();
-                    if (data.status == "Successful")
-                        $(".status").css("background-color", "rgb(119, 199, 0)");
-                    else
-                        $(".status").css("background-color", "rgb(235, 75, 75)");
-
-                } else if (data.status) {
-                    // console.log(data);
-                    // output.innerHTML = data.status;
+                    $(".loader").hide();//hide the loader
+                    $(".status").css("background-color", "rgb(119, 199, 0)");//make the background green
+                }else if(data.status == "Failed" || data.status == "Invalid Request"){
+                    console.log(data)
+                    clearInterval(myvar);
+                    output.innerHTML = data.output;
                     $(".success").html(data.status);
-                } else {
+                    $(".loader").hide();//hide the loader
+                    $(".status").css("background-color", "rgb(235, 75, 75)");//make the background red
+                }else if(data.status == "Queued"){
+                    $(".success").html(data.status);
+                    $(".status").css("background-color", "rgb(139, 139, 139)");//make the background grey
+                }else if(data.status == "Processing"){
+                    $(".success").html(data.status);
+                    $(".status").css("background-color", "rgb(139, 139, 139)");//make the background grey
+                }else if(data.status == "Runtime Error"){
+                    clearInterval(myvar);
+                    output.innerHTML = "Out of Memory";
+                    $(".success").html(data.status);
+                    $(".loader").hide();//hide the loader
+                    $(".status").css("background-color", "rgb(235, 75, 75)");//make the background red
+                }else {
                     clearInterval(myvar);
                     output.innerHTML = "Something went wrong";
+                    $(".success").html("Failed");
+                    $(".loader").hide();//hide the loader
+                    $(".status").css("background-color", "rgb(235, 75, 75)");//make the background red
                 }
 
+
             })
-    }, 200)
+    }, 500)
 
 
 

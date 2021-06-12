@@ -1,4 +1,4 @@
-@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+/* @import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'); */
 
 :root {
     /* font-size: 16px; */
@@ -160,28 +160,6 @@ body {
 }
 
 
-.min_max_button {
-    background-color: var(--dracula);
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-
-    color: var(--text-primary);
-
-    height: 50%;
-
-    padding-bottom: 3px;
-    padding-top: 3px;
-    padding-left: 8px;
-    padding-right: 8px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-left: auto;
-
-}
-
 .fi-rr-interrogation {
     height: 100%;
     width: 2em;
@@ -197,7 +175,7 @@ body {
 .fi-rr-interrogation:hover {
     color: #80c8f8;
 }
-
+/* 
 .about {
     background-color: var(--dracula);
     border: 1px solid var(--border-color);
@@ -219,7 +197,7 @@ body {
 
 
     margin-left: 10px;
-}
+} */
 
 
 .box-area {
@@ -743,53 +721,6 @@ body {
     }
 
 
-
-    .min_max_button {
-        background-color: var(--dracula);
-        border: 1px solid var(--border-color);
-        border-radius: 5px;
-
-        color: var(--text-primary);
-
-        height: 50%;
-
-        padding-bottom: 3px;
-        padding-top: 3px;
-        padding-left: 8px;
-        padding-right: 8px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        margin-left: auto;
-
-    }
-
-    .about {
-        background-color: var(--dracula);
-        border: 1px solid var(--border-color);
-        border-radius: 5px;
-        color: var(--text-primary);
-
-
-        height: 50%;
-
-        padding-bottom: 3px;
-        padding-top: 3px;
-        padding-left: 8px;
-        padding-right: 8px;
-
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-
-        margin-left: 10px;
-    }
-
-
     .box-area {
         height: 93%;
         width: 100%;
@@ -799,9 +730,17 @@ body {
 
     }
 
+    @media only screen and (max-height: 500px) {
+
+        .box-area {
+            height: 89% !important;
+        }
+    }
+
+
     .editor {
 
-        font-size: 12px !important;
+        /* font-size: 12px !important; */
 
         position: absolute;
         width: 100% !important;
@@ -818,6 +757,21 @@ body {
         z-index: 9;
 
     }
+
+
+
+    @media only screen and (max-width: 500px) {
+        .editor {
+            font-size: 12px !important;
+        }
+    }
+
+    @media only screen and (max-height: 500px) {
+        .editor {
+            height: 88% !important;
+        }
+    }
+
 
 
     .line1 {
@@ -873,10 +827,15 @@ body {
         z-index: 9;
     }
 
-
+    @media only screen and (max-height: 500px) {
+        .options_menu {
+            height: 12% !important;
+            top: 88% !important;
+        }
+    }
     .stdin_area {
 
-        font-size: 12px !important;
+        /* font-size: 12px !important; */
 
         position: absolute;
         width: 100% !important;
@@ -891,6 +850,21 @@ body {
         z-index: 8;
     }
 
+
+    @media only screen and (max-width: 500px) {
+        .stdin_area {
+            font-size: 12px !important;
+        }
+    }
+
+    @media only screen and (max-height: 500px) {
+        .stdin_area {
+            height: 88% !important;
+            bottom: 12% !important;
+        }
+    }
+
+
     .stdout_area {
 
         position: absolute;
@@ -901,6 +875,12 @@ body {
         /* background-color: rgb(160, 97, 15); */
 
         z-index: 8;
+    }
+
+    @media only screen and (max-height: 500px) {
+        .stdout_area {
+            height: 88% !important;
+        }
     }
 
 
@@ -985,23 +965,6 @@ body {
         cursor: pointer;
     }
 
-    .setting {
-        box-sizing: border-box;
-        border: 1px solid var(--border-color);
-        color: var(--text-primary);
-
-
-        font-size: 12px;
-
-        padding-bottom: 3px;
-        padding-top: 3px;
-        padding-left: 8px;
-        padding-right: 8px;
-
-        cursor: pointer;
-
-
-    }
 
     .run_button {
         box-sizing: border-box;
@@ -1035,18 +998,29 @@ body {
         display: flex;
         align-items: center;
 
+        border-radius: 0 0 0 0;
+
         box-sizing: border-box;
         border-bottom: 1px dashed var(--border-color);
         border-right: 1px solid var(--border-color);
         border-top: 1px solid var(--border-color);
 
+        font-size: 12px !important;
+
     }
+
+    @media only screen and (max-height: 500px) {
+        .right_topbar {
+            height: 11% !important;
+        }
+    }
+
 
     .output {
         background-color: var(--dracula);
         color: var(--text-primary);
 
-        font-size: 12px !important;
+        /* font-size: 12px !important; */
 
         height: 87%;
         width: 100%;
@@ -1066,6 +1040,19 @@ body {
         white-space: pre-wrap;
     }
 
+    @media only screen and (max-width: 500px) {
+        .output {
+            font-size: 12px !important;
+        }
+    }
+
+    @media only screen and (max-height: 500px) {
+        .output {
+            height: 78% !important;
+        }
+    }
+
+
     .right_bottombar {
         background-color: var(--dracula);
         height: 5%;
@@ -1077,6 +1064,11 @@ body {
 
     }
 
+    @media only screen and (max-height: 500px) {
+        .right_bottombar {
+            height: 11% !important;
+        }
+    }
 
 
 
@@ -1084,7 +1076,8 @@ body {
         margin-left: 8px;
         color: var(--text-primary);
 
-
+        white-space: nowrap;
+        overflow-x: auto;
     }
 
     .language_info {
@@ -1118,14 +1111,17 @@ body {
         align-items: center;
         justify-content: center;
 
+        white-space: nowrap;
+        overflow-x: auto;
     }
+
 
     .loader {
         border: 2px solid #f3f3f3;
         border-radius: 50%;
         border-top: 2px solid #3498db;
-        width: 12px;
-        height: 12px;
+        width: 5px;
+        height: 5px;
         -webkit-animation: spin 2s linear infinite;
         /* Safari */
         animation: spin 2s linear infinite;
