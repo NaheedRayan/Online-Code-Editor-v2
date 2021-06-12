@@ -90,7 +90,7 @@ document.querySelector(".run_button").addEventListener("click", (e) => {
     // require('dotenv').config({path: __dirname + '/.env'})
 
     // var server_link = process.env.SERVER_LINK;
-    var server_link = "http://52.172.231.206:8080/submit" ;
+    var server_link = "https://52.172.231.206:8080/submit" ;
     // var server_link = "http://192.168.43.152:8080/submit" ; //localhost
 
     fetch(server_link, {

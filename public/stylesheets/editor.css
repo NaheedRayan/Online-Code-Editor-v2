@@ -604,6 +604,12 @@ body {
 
     }
 
+    @media only screen and (max-height: 500px) {
+        .bigbox .main{
+            padding-bottom: 0px !important;
+        }
+    }
+
     .box {
         /* background-color: var(--dracula); */
 
@@ -630,6 +636,12 @@ body {
         align-items: center;
 
     }
+    @media only screen and (max-height: 500px) {
+        .box_options{
+            height: 10% !important;
+        }
+    }
+
 
     .box .box_options .filename1 {
         background-color: var(--dracula);
@@ -733,7 +745,7 @@ body {
     @media only screen and (max-height: 500px) {
 
         .box-area {
-            height: 89% !important;
+            height: 87% !important;
         }
     }
 
@@ -768,7 +780,7 @@ body {
 
     @media only screen and (max-height: 500px) {
         .editor {
-            height: 88% !important;
+            height: 85% !important;
         }
     }
 
@@ -829,8 +841,8 @@ body {
 
     @media only screen and (max-height: 500px) {
         .options_menu {
-            height: 12% !important;
-            top: 88% !important;
+            height: 15% !important;
+            top: 85% !important;
         }
     }
     .stdin_area {
@@ -859,8 +871,8 @@ body {
 
     @media only screen and (max-height: 500px) {
         .stdin_area {
-            height: 88% !important;
-            bottom: 12% !important;
+            height: 85% !important;
+            bottom: 15% !important;
         }
     }
 
@@ -879,7 +891,7 @@ body {
 
     @media only screen and (max-height: 500px) {
         .stdout_area {
-            height: 88% !important;
+            height: 85% !important;
         }
     }
 
@@ -899,6 +911,7 @@ body {
         /* position: absolute; */
         /* bottom: 0; */
     }
+  
 
 
 
@@ -1011,7 +1024,7 @@ body {
 
     @media only screen and (max-height: 500px) {
         .right_topbar {
-            height: 11% !important;
+            height: 14% !important;
         }
     }
 
@@ -1048,7 +1061,7 @@ body {
 
     @media only screen and (max-height: 500px) {
         .output {
-            height: 78% !important;
+            height: 72% !important;
         }
     }
 
@@ -1066,7 +1079,7 @@ body {
 
     @media only screen and (max-height: 500px) {
         .right_bottombar {
-            height: 11% !important;
+            height: 14% !important;
         }
     }
 
@@ -1120,8 +1133,8 @@ body {
         border: 2px solid #f3f3f3;
         border-radius: 50%;
         border-top: 2px solid #3498db;
-        width: 5px;
-        height: 5px;
+        width: 8px;
+        height: 8px;
         -webkit-animation: spin 2s linear infinite;
         /* Safari */
         animation: spin 2s linear infinite;
