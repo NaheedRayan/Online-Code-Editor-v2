@@ -14,6 +14,8 @@
 
     <link rel="stylesheet" type="text/css" href="stylesheets/home.css" />
     <link rel="stylesheet" type="text/css" href="stylesheets/navbar.css" />
+    <!-- in your header -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/devicon.min.css">
 </head>
 
 <body>
@@ -27,19 +29,52 @@
 
 
 
-    <main>
+    <main style="display: flex; flex-direction: column;align-items: center;">
 
         <div class="part1">Build scalable coding platforms easily</div>
-        <div class="part2">Out-of-the-box software components and APIs that enable you to create flexible and scalable coding platforms and code execution environments.</div>
+        <div class="part2">Out-of-the-box software components and APIs that enable you to create flexible and scalable
+            coding platforms and code execution environments.</div>
 
-        <a href="#"><img class="image01" src="Desktop01.png" alt=""  width="100%"  class="d-inline-block align-text-top"></a>
+        <a href="#"><img class="image01" src="Desktop01.png" alt="" width="100%"
+                class="d-inline-block align-text-top"></a>
+
+        <a class="try_now_button" href="/editor">Try Now</a>
 
 
         <div class="part3">UI optimized for mobile browser</div>
         <div class="part4">
-            <img class="image02" width="30%" src="Desktop02.png" alt=""   >
-            <img class="image03" width="30%" src="Desktop03.png" alt=""   >
+            <img class="image02" width="30%" src="Desktop02.png" alt="">
+            <img class="image03" width="30%" src="Desktop03.png" alt="">
         </div>
+
+        <div class="part3">Supported Languages</div>
+        <div class="part4">
+            <i class="devicon-c-plain fontsizeicon"></i>
+            <i class="devicon-cplusplus-plain  fontsizeicon"></i>
+            <i class="devicon-python-plain fontsizeicon"></i>
+            <i class="devicon-java-plain-wordmark fontsizeicon"></i>
+            <i class="devicon-javascript-plain fontsizeicon"></i>
+
+
+
+        </div>
+
+        <div class="part3">Trusted by</div>
+        <div class="part4">
+
+            <img class="company_icon" src="https://icongr.am/simple/amazonaws.svg?size=128&color=ffffff&colored=false">
+            <img class="company_icon" src="https://icongr.am/simple/airbnb.svg?size=128&color=ffffff&colored=false">
+            <img class="company_icon" src="https://icongr.am/simple/codechef.svg?size=128&color=ffffff&colored=false ">
+            <img class="company_icon" src="https://icongr.am/simple/freecodecamp.svg?size=128&color=ffffff&colored=false ">
+            <img class="company_icon" src="https://icongr.am/simple/codecademy.svg?size=128&color=ffffff&colored=false ">
+            <img class="company_icon" src="https://icongr.am/simple/codepen.svg?size=128&color=ffffff&colored=false">
+            <img class="company_icon" src="https://icongr.am/simple/hackerearth.svg?size=128&color=ffffff&colored=false">
+            <img class="company_icon" src="https://icongr.am/simple/hackerrank.svg?size=128&color=ffffff&colored=false">
+        </div>
+
+
+
+
         <!-- <div class="grid-container">
             <div class="grid-item-1">1</div>
             <div class="grid-item">2</div>
@@ -64,7 +99,7 @@
     </main>
 
     <footer>
-        <%- include('../partials/footer'); %>
+        <%- include('../partials/big-footer'); %>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
