@@ -18,7 +18,10 @@ function change_language(event) {
 
     language = event.target.value;
     // lang = event.target.value;
-    if (language == "cpp" | language == "c") {
+    if (language == "c") {
+        ed.getSession().setMode("ace/mode/c_cpp");
+        $(".filename1").html("code.c");
+    } else if (language == "cpp") {
         ed.getSession().setMode("ace/mode/c_cpp");
         $(".filename1").html("code.cpp");
     } else if (language == "python3") {
@@ -39,7 +42,7 @@ function change_language(event) {
 
 document.querySelector(".run_button").addEventListener("click", (e) => {
     console.log("run button is clicked");
-    
+
     // for media query
     if (x.matches) {
         filename1.style.cssText = "background-color: black; border-left:none ;border-right: none;border-top:none;z-index:9";
@@ -56,6 +59,7 @@ document.querySelector(".run_button").addEventListener("click", (e) => {
     $(".status").css("background-color", "rgb(139, 139, 139)")
     $(".success").html("");
 
+    output.innerHTML = "";
 
     var today = new Date();
     var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -82,16 +86,9 @@ document.querySelector(".run_button").addEventListener("click", (e) => {
 
     console.log(data)
 
-    // var myJson = JSON.stringify(data)
-    // console.log(myJson)
-
-    // "http://localhost:8080/submit"
-    
-    // require('dotenv').config({path: __dirname + '/.env'})
-
-    // var server_link = process.env.SERVER_LINK;
-    var server_link = "https://52.172.231.206:8080/submit" ;
-    // var server_link = "http://192.168.43.152:8080/submit" ; //localhost
+    // let server_link = "http://localhost:8080/submit" ;
+    // let server_link = "http://52.172.231.206:8080/submit";
+    let server_link = "https://52.172.231.206:8080/submit";
 
     fetch(server_link, {
         method: "POST",
@@ -100,9 +97,7 @@ document.querySelector(".run_button").addEventListener("click", (e) => {
         },
         body: JSON.stringify(data)
     }).then(res => {
-        
         console.log(res)
-        console.log(res.ok)
         return res.text()
     }).then(data => {
         // console.log(data)
@@ -114,68 +109,61 @@ document.querySelector(".run_button").addEventListener("click", (e) => {
         $(".loader").hide();
 
         $(".status").css("background-color", "rgb(235, 75, 75)");
-
-
-
     });
-
-
 })
+
 
 // when the link is available
 function output_link(data_link) {
     console.log(data_link)
 
 
-    let myvar = setInterval(function checklink() {
-        fetch(data_link)
-            .then(res => {
-                console.log(res);
-                return res.json();
-            })
-            .then(data => {
+    // let myvar = setInterval(function checklink() {
+    fetch(data_link)
+        .then(res => {
+            console.log(res);
+            return res.json();
+        })
+        .then(data => {
 
-                console.log(data.status);
+            console.log(data.status);
+            if (data.status == "Successful") {
+                console.log(data);
 
+                output.innerHTML = data.output;
+                $(".success").html(data.status);
+                $(".loader").hide(); //hide the loader
+                $(".status").css("background-color", "rgb(119, 199, 0)"); //make the background green
 
-                if(data.status == "Successful"){
-                    console.log(data);
-                    clearInterval(myvar);
-                    output.innerHTML = data.output;
-                    $(".success").html(data.status);
-                    $(".loader").hide();//hide the loader
-                    $(".status").css("background-color", "rgb(119, 199, 0)");//make the background green
-                }else if(data.status == "Failed" || data.status == "Invalid Request"){
-                    console.log(data)
-                    clearInterval(myvar);
-                    output.innerHTML = data.output;
-                    $(".success").html(data.status);
-                    $(".loader").hide();//hide the loader
-                    $(".status").css("background-color", "rgb(235, 75, 75)");//make the background red
-                }else if(data.status == "Queued"){
-                    $(".success").html(data.status);
-                    $(".status").css("background-color", "rgb(139, 139, 139)");//make the background grey
-                }else if(data.status == "Processing"){
-                    $(".success").html(data.status);
-                    $(".status").css("background-color", "rgb(139, 139, 139)");//make the background grey
-                }else if(data.status == "Runtime Error"){
-                    clearInterval(myvar);
-                    output.innerHTML = "Out of Memory";
-                    $(".success").html(data.status);
-                    $(".loader").hide();//hide the loader
-                    $(".status").css("background-color", "rgb(235, 75, 75)");//make the background red
-                }else {
-                    clearInterval(myvar);
-                    output.innerHTML = "Something went wrong";
-                    $(".success").html("Failed");
-                    $(".loader").hide();//hide the loader
-                    $(".status").css("background-color", "rgb(235, 75, 75)");//make the background red
-                }
+            } else if (data.status == "Failed" || data.status == "Invalid Request") {
+                console.log(data)
 
+                output.innerHTML = data.output;
+                $(".success").html(data.status);
+                $(".loader").hide(); //hide the loader
+                $(".status").css("background-color", "rgb(235, 75, 75)"); //make the background red
 
-            })
-    }, 500)
+            } else if (data.status == "Queued") {
+                $(".success").html(data.status);
+                $(".status").css("background-color", "rgb(139, 139, 139)"); //make the background grey
+                output_link(data_link) //recursive call
 
+            } else if (data.status == "Processing") {
+                $(".success").html(data.status);
+                $(".status").css("background-color", "rgb(139, 139, 139)"); //make the background grey
+                output_link(data_link) //recursive call
 
+            } else if (data.status == "Runtime Error") {
+                output.innerHTML = "Out of Memory";
+                $(".success").html(data.status);
+                $(".loader").hide(); //hide the loader
+                $(".status").css("background-color", "rgb(235, 75, 75)"); //make the background red
 
+            } else {
+                output.innerHTML = "Something went wrong";
+                $(".success").html("Failed");
+                $(".loader").hide(); //hide the loader
+                $(".status").css("background-color", "rgb(235, 75, 75)"); //make the background red
+            }
+        })
 }
