@@ -6,6 +6,14 @@ body{
     margin: 0;
 }
 
+main {
+    padding-top: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 20%;
+
+}
+
 /* for  header,main and footer position and sizing */
 .box {
     display: flex;
@@ -14,49 +22,28 @@ body{
     width: 100%;
 }
 
-.box .header {
-    flex: 0 1 auto;
-}
-
-.box .main {
-    
-    flex: 1 1 auto;
-    width: 100%;
-    
-    
-}
-
-.box .footer {
-    flex: 0 1 40px;
-}
 
 .firstText{
-    font-size: 45px;
+    font-size: 3rem;
     font-weight: bolder;
     text-align: center;
-    margin-top: 15px;
-    margin-left: 5%;
-    margin-right: 5%;
-    
 }
 .sndtext{
-    font-size: 25px;
+    font-size: 2rem;
     font-weight: bold;
     text-align:center;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-bottom:50px ;
 }
 
 /* for price grid  */
 .price-grid{
-    display: grid;
-    gap: 1rem;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
     align-items: center;
-    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 5%;
+    flex-wrap: wrap;
+
+    margin-bottom: 15rem;
 
 }
 
@@ -65,17 +52,20 @@ body{
 .card1{
     display: flex;
     flex-direction: column;
-    align-content: center;
-    background: #353535;
+    text-align: center;
+   
     color: white;
-    box-shadow: rgb(51, 51, 51);
     border-radius: 4px;
-    overflow: hidden;
-    text-align: center !important;
-    padding-top: 10px;
-    height: 480px;
-
     
+    width: 350px;
+    height: 450px;
+
+    margin-left: 5px;
+    margin-right:5px;
+    margin-bottom: 30px;
+
+
+   
 }
 
 .card1:hover{
@@ -84,8 +74,20 @@ body{
 /* for brand  */
 
 .brandtext1{
+    font-size:3rem;
     text-align: center;
     padding-bottom: 15px;
+    margin-bottom:50px;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom:200px;
 }
 
 .card2{
@@ -113,87 +115,44 @@ body{
     border: 2px solid #a5a5a5;
     padding: 25px 10px;
     border-radius: 8px;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 200px;
 }
 .text1{
     padding-bottom: 2%;
 }
-.faq{
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 5%;
-}
+
 .topfaq{
     text-align: center;
-    padding-bottom: 3%;
+    /* padding-bottom: 3%; */
 }
 
-/*media*/
-@media only screen and (max-width: 830px) {
+@media only screen and (max-width: 1000px) {
+
+    main {
+        padding-top: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 5%;
+    
+    }
+
     .firstText{
-        font-size: 25px;
-        font-weight: bolder;
-        text-align: center;
-        margin-top: 15px;
-        margin-left: 5%;
-        margin-right: 5%;
-        
+        font-size: 2rem;
     }
     .sndtext{
-        font-size: 14px;
-        font-weight: bold;
-        text-align:center;
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-}
-@media only screen and (max-width: 1000px) {
-    body {
-        height: 100vh;
-        width: 100%;
-        margin: 0;
-        background-color: black;
+        font-size: 1rem;
+        margin-bottom:50px ;
     }
 
-    .box {
-        display: flex;
-        flex-flow: column;
-        height: 100%;
-        width: 100%;
-    }
-    .box .header {
-        flex: 0 1 auto;
+    .brandtext1{
+        font-size:2rem;
     }
 
-    .box .main {
-    
-        flex: 1 1 auto;
-        width: 100%;
-
-        
-    }
-
-    .box .footer {
-        flex: 0 1 auto;
-    }
-
-
-     /* for brand img */
-     .brandcard{
-        display: grid;
-        gap: 1rem;
-        align-items: center;
-        grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
-        margin-top: 5%;
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-bottom: 5%;
-     }
-    .card2 img{
-        height: 80px;
-        width: 100px;
+    .company_icon {
+        margin: 10px;
+        font-size: 12px;
+        width: 8em;
+        height: 8em;
     }
 
 }
