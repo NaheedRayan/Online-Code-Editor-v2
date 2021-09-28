@@ -13,8 +13,13 @@
 
     <link rel="stylesheet" type="text/css" href="stylesheets/navbar.css" />
     <link rel="stylesheet" type="text/css" href="stylesheets/editor.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/editor_button.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=B612">
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <!-- <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"> -->
+
+
+    <!-- for offline icon in editor -->
+    <link rel="stylesheet" href="stylesheets/flaticon-mini.css">
 
 </head>
 
@@ -60,11 +65,134 @@
 
                         </select>
 
-                        <span class="load">Load</span>
-                        <span class="fi-rr-disk"></span>
-                        <!-- <span class="setting">Setting</span> -->
-                        <span class="fi-rr-settings"></span>
+
+                        <!-- <span data-model1-target="#model1" class="load"></span> -->
+
+                        <span data-modal-target="#modal1" class="load">Load</span>
+                        <span data-modal-target="#modal2" class="fi-rr-disk"></span>
+                        <span data-modal-target="#modal3" class="fi-rr-settings"></span>
                         <span class="run_button">RUN</span>
+
+                        <div class="modal1" id="modal1">
+
+
+                            <div class="modal1-header">
+                                <div class="title">Load file</div>
+                                <button data-close-button="#modal1" class="close-button">&times;</button>
+                            </div>
+
+                            <!-- invisible div that hold data -->
+                            <% if (session.passport) { %>
+                            <h2 data-hidden-session-id=<%= session.passport.user %>></h2>
+                            <% } %>
+
+                            <div class="modal1-body">
+
+
+                            <!-- generated code from js -->
+
+                            </div>
+                        </div>
+
+                        <div class="modal2" id="modal2">
+                            <div class="modal1-header">
+                                <div class="title">Example modal2</div>
+                                <button data-close-button="#modal2" class="close-button">&times;</button>
+                            </div>
+                            <div class="modal2-body">
+                                <!-- EDITOR TEXT -->
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa est maiores, fugit nulla
+                                ad in, commodi vero ipsum corrupti provident adipisci. Reiciendis quas pariatur eum
+                                nesciunt quis suscipit architecto itaque?
+
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur pariatur voluptate
+                                reprehenderit minima deleniti qui voluptatem, quisquam dolorum, nihil doloribus animi
+                                fugit rerum excepturi beatae saepe ducimus voluptatum aut. Perspiciatis, dicta et!
+                                Voluptatum, id inventore! Tenetur maxime voluptatibus voluptates tempora eius.
+                                Distinctio, deserunt sed ut et, autem laborum aperiam harum doloribus, blanditiis
+                                quisquam optio fugit ipsum vitae consectetur aliquam. A totam provident nobis voluptates
+                                minus, adipisci dolores cumque aperiam consectetur dolore. Sequi autem rem aut nulla
+                                aperiam expedita quam blanditiis unde excepturi error reiciendis quisquam reprehenderit
+                                perferendis, fugit amet possimus esse tempore doloremque ad quod laudantium aspernatur.
+                                Aliquid, at facilis.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae sit sapiente sint?
+                                Eligendi odit repudiandae totam tempora aliquid consequatur aliquam excepturi! Dolor,
+                                necessitatibus! Quaerat obcaecati nihil corporis et nobis, quia eos quod dolorum
+                                doloremque enim earum omnis aliquam laborum in necessitatibus. Ut nobis quaerat odio,
+                                impedit dolores voluptas molestias repudiandae dolorem obcaecati fugit maxime harum
+                                cumque a cum ad earum porro. Numquam itaque corrupti eius necessitatibus esse velit.
+                                Eligendi in, quae est beatae optio maxime vitae temporibus molestias, quisquam
+                                voluptatibus modi nam vero incidunt officia fuga obcaecati porro rem adipisci culpa
+                                magni? Mollitia dolorum ex molestias officiis nostrum, delectus illo, reprehenderit in
+                                dicta soluta amet magni perferendis distinctio ab repudiandae beatae quos! Dolor
+                                consequatur laboriosam eius ipsum magnam esse pariatur dignissimos odio dolores
+                                voluptatum! Quisquam asperiores rerum aliquam doloribus accusantium distinctio in at
+                                ullam est ratione recusandae molestiae iusto unde deleniti qui iure cum, animi tenetur
+                                aliquid debitis fugit totam voluptatem! Adipisci, esse sit! Minus, temporibus nihil!
+                                Odio minus perferendis, totam veritatis, magnam accusantium aspernatur tempora dolore,
+                                cum beatae ab. Exercitationem quae quos quaerat fuga non culpa. Ipsum in debitis
+                                voluptates modi tempora commodi totam incidunt voluptatem, quos similique deleniti quam
+                                vero a saepe natus amet eos! Eum nesciunt tempora, mollitia commodi, alias reprehenderit
+                                magni quisquam debitis id adipisci laborum accusamus! Dolore, ipsam. Asperiores dolore
+                                illo laboriosam eius nesciunt beatae necessitatibus, tempore quod modi. Ipsum
+                                consequuntur corporis saepe temporibus aut maiores, fugit architecto, error, praesentium
+                                repellat aliquid? Odit quia veniam quam sapiente, magnam optio porro nisi assumenda sunt
+                                non voluptas quasi voluptatum enim vitae architecto nobis illo accusamus dolor, magni
+                                numquam hic error? Repellat nam alias nulla esse modi dolores suscipit neque, voluptatum
+                                vel quisquam quae ipsam aliquam vitae. Doloremque reprehenderit esse eveniet praesentium
+                                voluptatem error voluptas nemo nisi minima magnam placeat ipsum porro, dolor ducimus
+                                optio, repudiandae eius aperiam quos! Itaque fugit voluptatibus dolore architecto
+                                repellat facilis, animi deleniti nostrum. Hic porro commodi rem eveniet voluptatibus
+                                tempora beatae saepe eaque id nihil itaque obcaecati autem tempore molestias, facere vel
+                                pariatur consectetur illum sunt ratione ex, modi eligendi! Eum quos illum voluptatem
+                                officia mollitia, nulla veritatis atque assumenda numquam aliquam eaque cupiditate harum
+                                aliquid. Quibusdam eius tenetur quidem soluta tempora! Laudantium provident sit hic
+                                repellat vitae odit unde rerum animi autem officiis ipsum quaerat veritatis assumenda
+                                illum eligendi quam voluptatem in itaque, reprehenderit perspiciatis! Suscipit non
+                                praesentium blanditiis saepe, aut laboriosam quisquam dolorem quaerat necessitatibus
+                                voluptatibus commodi veritatis nulla accusamus autem eligendi sed exercitationem
+                                incidunt corrupti sunt! Incidunt aspernatur vero provident quibusdam, impedit a?
+                                Repellendus error neque vel est obcaecati, dolorum commodi sint voluptatibus mollitia,
+                                rerum voluptate cumque tempora quis asperiores placeat id saepe natus? Doloribus,
+                                tempora! Odio consectetur dicta molestias saepe dolore! Optio, labore delectus molestias
+                                praesentium necessitatibus, soluta, numquam voluptate ratione assumenda animi ducimus
+                                doloribus quae omnis voluptas iure. Ducimus corrupti ipsa ad, veniam recusandae
+                                architecto numquam quos quis provident nesciunt molestias accusamus nostrum cumque
+                                accusantium enim nemo quod veritatis, animi magni rerum maxime minima quo natus. Quaerat
+                                cupiditate qui totam, quisquam voluptatum veritatis id illum voluptate quasi?
+                            </div>
+                        </div>
+
+                        <div class="modal3" id="modal3">
+                            <div class="modal1-header">
+                                <div class="title">Example model3</div>
+                                <button data-close-button="#modal3" class="close-button">&times;</button>
+                            </div>
+                            <div class="modal3-body">
+                                <!-- EDITOR TEXT -->
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni modi ullam ipsam, magnam
+                                adipisci ipsum officia harum possimus reiciendis accusamus esse commodi autem, nobis
+                                accusantium. Error numquam enim itaque quidem.
+
+                            </div>
+                        </div>
+
+
+                        <div id="overlay"></div>
+                        <!-- <div class="modal" id="modal1">
+                            <div class="modal-header">
+                              <div class="title">Example Modal</div>
+                              <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quod alias ut illo doloremque eum ipsum obcaecati distinctio debitis reiciendis quae quia soluta totam doloribus quos nesciunt necessitatibus, consectetur quisquam accusamus ex, dolorum, dicta vel? Nostrum voluptatem totam, molestiae rem at ad autem dolor ex aperiam. Amet assumenda eos architecto, dolor placeat deserunt voluptatibus tenetur sint officiis perferendis atque! Voluptatem maxime eius eum dolorem dolor exercitationem quis iusto totam! Repudiandae nobis nesciunt sequi iure! Eligendi, eius libero. Ex, repellat sapiente!
+                            </div>
+                        </div>
+                        <div id="overlay"></div> -->
+
+
+
+
                     </div>
 
                     <div class="stdin_area" id="stdin_area"></div>
@@ -142,6 +270,9 @@
     <script src="js/line_resizer.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/run.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/button.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/editor_button.js" type="text/javascript" charset="utf-8"></script>
+
+
 </body>
 
 </html>
