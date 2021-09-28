@@ -1,0 +1,187 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.modal1 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  z-index: 30;
+  background-color: white;
+  color: black;
+
+
+  width: 500px;
+  max-width: 80%;
+  height: 800px;
+  max-height: 80%;
+
+  overflow: auto;
+
+}
+
+.modal2 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  z-index: 30;
+  background-color: white;
+  color: black;
+
+  width: 500px;
+  max-width: 80%;
+  height: 800px;
+  max-height: 80%;
+
+  overflow: auto;
+
+
+}
+
+
+.modal3 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  z-index: 30;
+  background-color: white;
+  color: black;
+
+
+  width: 500px;
+  max-width: 80%;
+  height: 500px;
+  max-height: 80%;
+
+  overflow: auto;
+
+}
+
+
+.modal1.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal2.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal3.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal1-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modal1-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal1-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal1-body {
+  padding: 10px 15px;
+}
+
+
+.modal2-body {
+  padding: 10px 15px;
+}
+
+.modal3-body {
+  padding: 10px 15px;
+}
+
+.modal1_list_item {
+  width: 100%;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+
+  margin: 5px;
+  color: black;
+  background-color: rgb(228, 228, 228);
+
+  border-radius: 8px;
+}
+
+.modal1_file_name {
+  width: calc(100% - 108px);
+
+  padding: 5px;
+
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.modal_list_item_edit_button {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(48, 236, 95);
+  border-radius: 8px;
+  margin-left: 2px;
+  margin-right: 2px;
+
+  /* border:none; */
+}
+
+.modal_list_item_delete_button {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(252, 103, 103);
+  border-radius: 8px;
+  margin-left: 2px;
+  margin-right: 2px;
+
+  /* border:none; */
+
+  font-weight: 500;
+  font-size: x-large;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 19;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
