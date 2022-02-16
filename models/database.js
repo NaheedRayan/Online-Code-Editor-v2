@@ -144,6 +144,42 @@ class DbServices{
             console.log(error)
         }
     }
+
+
+    async get_file(user_id){
+        try{
+            const response = await new Promise((resolve, reject)=>{
+                
+                const query = "SELECT * FROM File_data WHERE id = ?";
+                db.query(query , [user_id] , (err , results) => {
+                    if(err) reject(new Error(err.message));
+                    resolve(results);
+                })
+            })
+            return response;
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+
+    // deleting a file
+    async delete_file(user_id , file_id){
+        try{
+            const response = await new Promise((resolve, reject)=>{
+                
+                const query = "DELETE FROM File_data WHERE (id = ? AND file_id =?) ";
+                db.query(query , [user_id,file_id] , (err , results) => {
+                    if(err) reject(new Error(err.message));
+                    resolve(results);
+                })
+            })
+            return response;
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 

@@ -86,6 +86,15 @@ app.use("/editor", editor)
 const price = require('./routes/price')
 app.use("/price", price)
 
+//for getting the file
+const get_file = require("./routes/get_file")
+app.use("/get_file",get_file) 
+
+
+//for deleting the file
+const delete_file = require("./routes/delete_file")
+app.use("/delete_file",delete_file) 
+
 
 // app.get('/', (req, res) => {
 //     res.send("FROM THE SERVER")

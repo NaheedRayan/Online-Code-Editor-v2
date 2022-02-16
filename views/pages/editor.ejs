@@ -83,13 +83,23 @@
 
                             <!-- invisible div that hold data -->
                             <% if (session.passport) { %>
-                            <h2 data-hidden-session-id=<%= session.passport.user %>></h2>
+                            <h2 id="data-hidden-session-id" data-hidden-session-id=<%= session.passport.user %>></h2>
+                            <h2 id="data-hidden-file-id" data-hidden-file-id="0"></h2>
                             <% } %>
 
                             <div class="modal1-body">
 
 
                             <!-- generated code from js -->
+
+                            <script>
+                                // console.log(filedata)
+                                // // console.log("generated code");
+                                // function editing_button()
+                                // {
+                                //     console.log("clicked")
+                                // }
+                            </script>
 
                             </div>
                         </div>
