@@ -180,6 +180,49 @@ class DbServices{
             console.log(error);
         }
     }
+
+
+    //save as file with name
+
+    async save_as_file(file_name , data , user_id){
+        try {
+            const response = await new Promise((resolve, reject)=>{
+                
+                const query = "INSERT INTO File_data (file_name, file_data ,id) VALUES (?,?,?)" ;
+                db.query(query , [file_name , data , user_id] , (err , results) => {
+                    if(err) reject(new Error(err.message));
+                    resolve(results);
+                })
+            })
+            return response;
+                        
+        } catch (error) {
+            console.log(error)
+            
+        }
+    }
+
+
+    //save as file with name
+
+    async save_file(file_id , data){
+        try {
+            const response = await new Promise((resolve, reject)=>{
+                
+                const query = "UPDATE File_data SET file_data = ? WHERE file_id = ?" ;
+                db.query(query , [ data , file_id] , (err , results) => {
+                    if(err) reject(new Error(err.message));
+                    resolve(results);
+                })
+            })
+            return response;
+                        
+        } catch (error) {
+            console.log(error)
+            
+        }
+    }
+
 }
 
 

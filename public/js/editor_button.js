@@ -103,7 +103,7 @@ function openmodal1(modal) {
 
   // });
 
-  var promise = new Promise(function (resolve, reject) {
+  let promise = new Promise(function (resolve, reject) {
     // do a thing, possibly async, then…
 
 
@@ -111,7 +111,7 @@ function openmodal1(modal) {
       // console.log(res)
       return res.json()
     }).then(data => {
-      console.log(data)
+      // console.log(data)
 
       // console.log(data.length)
       for (i = 0; i < data.length; i++) {
@@ -152,7 +152,7 @@ function openmodal1(modal) {
       let element1 = document.getElementById("data-hidden-file-id")
       element1.setAttribute("data-hidden-file-id", file_id)
 
-      $(".filename1").html( result[position].file_name );
+      $(".filename1").html(result[position].file_name);
 
 
 
@@ -179,35 +179,37 @@ function openmodal1(modal) {
 
       let mod1 = document.querySelectorAll(".modal1_list_item")
 
-      for(let i = 0 ; i < mod1.length ; i++)
-      {
-        if(file_id ==mod1[i].attributes[1].value)
-        {  
+      for (let i = 0; i < mod1.length; i++) {
+        if (file_id == mod1[i].attributes[1].value) {
           $(mod1[i]).remove()
 
           let element1 = document.getElementById("data-hidden-file-id")
           element1.setAttribute("data-hidden-file-id", "0")
+          $(".filename1").html("code");
+
 
           let server_link = "http://localhost:3000/delete_file";
 
 
-          let obj_data = {"file_id" : file_id}
+          let obj_data = {
+            "file_id": file_id
+          }
           fetch(server_link, {
-              method: "POST",
-              headers: {
-                  'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(obj_data)
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(obj_data)
           }).then(res => {
-              // console.log(res)
-              return res.text()
+            // console.log(res)
+            return res.text()
           }).then(data => {
-              console.log(data)
+            console.log(data)
           }).catch(function () {
-              console.log("error while connecting api server");    
+            console.log("error while connecting api server");
           });
 
-          
+
         }
         // console.log(mod1[i].attributes[1].value)
       }
@@ -227,10 +229,171 @@ function openmodal1(modal) {
 
 
 function openmodal2(modal) {
+
+
+
+
   if (modal == null) return
+
+
   modal.classList.add('active')
   overlay.classList.add('active')
+
+
+  // let element1 = document.getElementById("data-hidden-file-id")
+  // let a = element1.getAttribute("data-hidden-file-id")
+  // console.log(a)
+
+
+
+  // $("#save-button").click(function (event) {
+  //   console.log('save button is clicked');
+
+  //   console.log(editor.getValue());
+  // });
+
+  // let element22 = document.getElementById("#save-as-button")
+  // console.log(element22)
+
+
+  // element22.addEventListener('click' , ()=>{
+  //   console.log('save as button is clicked');
+
+  // });
+  // $("#save-as-button").click(function (event) {
+  //   console.log('save as button is clicked');
+
+  // });
 }
+$("#save-button").click(function (event) {
+  console.log('save button is clicked');
+ 
+
+  let element1 = document.getElementById("data-hidden-file-id")
+  let a = element1.getAttribute("data-hidden-file-id")
+  // console.log(a)
+
+
+  let editor = ace.edit("editor");
+  let script_data = editor.getValue();
+
+  let editor2 = ace.edit("stdin_area");
+  let input_data = editor2.getValue();
+
+  let data_obj = {
+    src: script_data,
+    stdin: input_data,
+    lang: "c",
+    timeout: "5"
+  }
+
+
+
+  // let x = document.getElementById("file_name22").value
+  // let file_name = $('#file_name1').html();
+
+  if (a != 0) {
+    // console.log(x)
+    let data = JSON.stringify(data_obj)
+    // console.log(data)
+
+
+    let server_link = "http://localhost:3000/save_file";
+
+
+    let obj_data = {
+      "file_id": a ,
+      "file_data":data
+    }
+    fetch(server_link, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(obj_data)
+    }).then(res => {
+      // console.log(res)
+      return res.text()
+    }).then(data => {
+      console.log(data)
+    }).catch(function () {
+      console.log("error while connecting api server");
+    });
+
+
+
+    
+  }
+
+
+});
+
+
+$("#save-as-button").click(function (event) {
+  console.log('save as button is clicked');
+
+
+
+  let element1 = document.getElementById("data-hidden-file-id")
+  let a = element1.getAttribute("data-hidden-file-id")
+  // console.log(a)
+
+
+  let editor = ace.edit("editor");
+  let script_data = editor.getValue();
+
+  let editor2 = ace.edit("stdin_area");
+  let input_data = editor2.getValue();
+
+  let data_obj = {
+    src: script_data,
+    stdin: input_data,
+    lang: "c",
+    timeout: "5"
+  }
+
+
+
+  let x = document.getElementById("file_name22").value
+  // let file_name = $('#file_name1').html();
+
+  if (x.length > 0) {
+    // console.log(x)
+    let data = JSON.stringify(data_obj)
+    // console.log(data)
+
+
+    let server_link = "http://localhost:3000/save_as_file";
+
+
+    let obj_data = {
+      "file_name": x ,
+      "file_data":data
+    }
+    fetch(server_link, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(obj_data)
+    }).then(res => {
+      // console.log(res)
+      return res.text()
+    }).then(data => {
+      console.log(data)
+    }).catch(function () {
+      console.log("error while connecting api server");
+    });
+
+
+
+    
+  }
+
+
+
+});
+
 
 function openmodal3(modal) {
   if (modal == null) return

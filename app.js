@@ -96,6 +96,15 @@ const delete_file = require("./routes/delete_file")
 app.use("/delete_file",delete_file) 
 
 
+//for save_as the file
+const save_as_file = require("./routes/save_as_file")
+app.use("/save_as_file",save_as_file) 
+
+//for save_as the file
+const save_file = require("./routes/save_file")
+app.use("/save_file",save_file) 
+
+
 // app.get('/', (req, res) => {
 //     res.send("FROM THE SERVER")
 //     // res.render("pages/home");
