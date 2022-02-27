@@ -49,8 +49,6 @@ closemodalButtons.forEach(button => {
 
 
 ///////// for opening modal  //////////////////////
-// const DbService = require("./models/database");
-
 
 
 // modal for load button
@@ -64,44 +62,6 @@ function openmodal1(modal) {
   let elem = document.querySelector(".modal1-body")
 
   elem.innerHTML = ""
-
-
-  // fetch('localhost:3000/get_file')
-  //   .then(response => response.json())
-  //   .then(data => console.log(data));
-
-  // fetch("http://localhost:3000/get_file", {}).then(res => {
-  //   // console.log(res)
-  //   return res.json()
-  // }).then(data => {
-  //   console.log(data)
-
-  //   // console.log(data.length)
-  //   for (i = 0; i < data.length; i++) {
-  //     elem.innerHTML +=
-  //       `<div class="modal1_list_item">
-  //       <div class="modal1_file_name">${data[i].file_name}</div>
-  //       <button data-position="${i}" data-file-prid="${data[i].file_id}" class="modal_list_item_edit_button">edit</button>
-  //       <button data-position="${i}" data-file-prid="${data[i].file_id}" class="modal_list_item_delete_button">X</button>
-  //     </div>`
-  //   }
-
-  //   // ace.require("ace/ext/language_tools");
-  //   // let editor = ace.edit("editor");
-  //   // // editor.setTheme("ace/theme/twilight");
-  //   // let element1 = document.getElementById("data-hidden-file-id")
-  //   // element1.setAttribute("data-hidden-file-id", "45")
-
-  //   // editor.setValue("hello")
-
-
-
-  //   // output_link(data)
-  // }).catch(function () {
-  //   console.log("error while connecting api server");
-
-
-  // });
 
   let promise = new Promise(function (resolve, reject) {
     // do a thing, possibly async, then…
@@ -213,9 +173,6 @@ function openmodal1(modal) {
         }
         // console.log(mod1[i].attributes[1].value)
       }
-
-
-      // $(".modal_list_item_delete_button").remove()
       console.log('clicked delete')
     });
 
@@ -239,31 +196,6 @@ function openmodal2(modal) {
   modal.classList.add('active')
   overlay.classList.add('active')
 
-
-  // let element1 = document.getElementById("data-hidden-file-id")
-  // let a = element1.getAttribute("data-hidden-file-id")
-  // console.log(a)
-
-
-
-  // $("#save-button").click(function (event) {
-  //   console.log('save button is clicked');
-
-  //   console.log(editor.getValue());
-  // });
-
-  // let element22 = document.getElementById("#save-as-button")
-  // console.log(element22)
-
-
-  // element22.addEventListener('click' , ()=>{
-  //   console.log('save as button is clicked');
-
-  // });
-  // $("#save-as-button").click(function (event) {
-  //   console.log('save as button is clicked');
-
-  // });
 }
 $("#save-button").click(function (event) {
   console.log('save button is clicked');
@@ -286,9 +218,6 @@ $("#save-button").click(function (event) {
     lang: "c",
     timeout: "5"
   }
-
-
-
   // let x = document.getElementById("file_name22").value
   // let file_name = $('#file_name1').html();
 
@@ -320,12 +249,7 @@ $("#save-button").click(function (event) {
       console.log("error while connecting api server");
     });
 
-
-
-    
   }
-
-
 });
 
 
@@ -384,14 +308,7 @@ $("#save-as-button").click(function (event) {
     }).catch(function () {
       console.log("error while connecting api server");
     });
-
-
-
-    
   }
-
-
-
 });
 
 

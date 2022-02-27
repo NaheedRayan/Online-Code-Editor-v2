@@ -20,23 +20,13 @@ router.post("/", isLoggedIn,(req, res) => {
           
         } else {
             // req.flash("error", "Something went wrong")
-            res.send("file deleted")
+            res.send("File deleted")
         }
     }).catch(err => {
         console.log(err)
         // req.flash("error", "Something went wrong"); // create the Message and save it to session as flashdata
-        res.send("sorry")
-        
-    
+        res.send("Something went wrong while deleting the file")
     })
-    // res.send("working fine")
-
-    // console.log("Hellfffffffffffffffffffffffffff")
-    // console.log(req.body.file_id)
-    // res.send("ok file deleted")
-
-
-
 })
 
 

@@ -5,7 +5,8 @@ let router = express.Router();
 
 router.get("/",isLoggedIn, (req, res) => {
     console.log("inside editor.js")
-    res.render("pages/editor");
+    res.render("pages/editor" , {session:req.session});
+	
 })
 
 
@@ -18,6 +19,7 @@ function isLoggedIn(req, res, next) {
 		return next();
 	// if they aren't redirect them to the home page
 	res.redirect('/signin');
+	// next();
 }
 
 
