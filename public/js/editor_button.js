@@ -183,12 +183,12 @@ function openmodal1(modal) {
 
 }
 
-
+var mod
 
 function openmodal2(modal) {
 
 
-
+  mod = modal
 
   if (modal == null) return
 
@@ -221,7 +221,7 @@ $("#save-button").click(function (event) {
   // let x = document.getElementById("file_name22").value
   // let file_name = $('#file_name1').html();
 
-  if (a != 0) {
+  if(a != 0){
     // console.log(x)
     let data = JSON.stringify(data_obj)
     // console.log(data)
@@ -245,6 +245,7 @@ $("#save-button").click(function (event) {
       return res.text()
     }).then(data => {
       console.log(data)
+      closemodal(mod)
     }).catch(function () {
       console.log("error while connecting api server");
     });
@@ -305,6 +306,8 @@ $("#save-as-button").click(function (event) {
       return res.text()
     }).then(data => {
       console.log(data)
+      closemodal(mod)
+
     }).catch(function () {
       console.log("error while connecting api server");
     });
