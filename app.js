@@ -104,6 +104,9 @@ app.use("/save_as_file",save_as_file)
 const save_file = require("./routes/save_file")
 app.use("/save_file",save_file) 
 
+//for user profile
+const userProfile = require('./routes/userProfile')
+app.use("/userProfile", userProfile)
 
 // app.get('/', (req, res) => {
 //     res.send("FROM THE SERVER")
