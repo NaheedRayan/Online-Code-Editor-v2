@@ -203,7 +203,7 @@ class DbServices{
     }
 
 
-    //save as file with name
+    //update file 
 
     async save_file(file_id , data){
         try {
@@ -222,6 +222,29 @@ class DbServices{
             
         }
     }
+
+
+    //update profile 
+
+    async update_profile(id , username , firstname , lastname , email , password , address , city , zip , phone){
+        try {
+            const response = await new Promise((resolve, reject)=>{
+                
+                const query = "UPDATE User SET  username = ? , first_name = ? , last_name = ? , email = ? , password = ? , address = ? , city = ? ,zip = ? , phone = ?  WHERE id = ?" ;
+                db.query(query , [ username , firstname , lastname , email , password , address , city , zip , phone , id] , (err , results) => {
+                    if(err) reject(new Error(err.message));
+                    resolve(results);
+                })
+            })
+            return response;
+                        
+        } catch (error) {
+            console.log(error)
+            
+        }
+    }
+
+
 
 }
 

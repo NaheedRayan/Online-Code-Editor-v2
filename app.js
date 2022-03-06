@@ -108,6 +108,11 @@ app.use("/save_file",save_file)
 const userProfile = require('./routes/userProfile')
 app.use("/userProfile", userProfile)
 
+
+//for update profile
+const update_profile = require('./routes/update_profile')
+app.use("/update_profile", update_profile)
+
 // app.get('/', (req, res) => {
 //     res.send("FROM THE SERVER")
 //     // res.render("pages/home");

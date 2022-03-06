@@ -1,134 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS (load bootstrap from a CDN) -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS (load bootstrap from a CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/navbar.css" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/userProfile.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/navbar.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/userProfile.css" />
 
-    <!-- in your header -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/devicon.min.css">
-    <title>User Profile</title>
+  <!-- in your header -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/devicon.min.css">
+  <title>User Profile</title>
 </head>
-<body>
-    <div class="header">
-        <!-- nav bar -->
-        <%- include('../partials/navbar'); %>
-    </div>
 
-      <!-- new code -->
-      <section class="h-100 gradient-custom-2">
-        <div class="container py-5 h-102">
-          <div class="row d-flex justify-content-center align-items-center h-102">
-            <div class="col col-lg-9 col-xl-7">
-              <div class="card">
-                <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
-                  <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-                    <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2" style="width:200px;height: 250px; z-index: 2">
-                    <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;">
-                      Edit picture
-                    </button>
-                  </div>
-                  <div class="ms-3" style="margin-top: 130px;">
-                    <h5 class="userName" aria-placeholder="name"> </h5>
-                    <p class="region"> </p>
-                  </div>
-                </div>
-                <div class="p-4 text-black" style="background-color: #f8f9fa;">
-                  <div class="d-flex justify-content-end text-center py-1">
-                    <!-- <div>
+<body>
+  <div class="header">
+    <!-- nav bar -->
+    <%- include('../partials/navbar'); %>
+  </div>
+
+  <!-- for flash messages -->
+  <%- include('../partials/flash'); %>
+
+  <!-- new code -->
+  <section class="h-100 gradient-custom-2">
+    <div class="container py-5 h-102">
+      <div class="row d-flex justify-content-center align-items-center h-102">
+        <div class="col col-lg-9 col-xl-7">
+          <div class="card">
+            <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
+              <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+                <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png"
+                  alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                  style="width:200px;height: 250px; z-index: 2">
+                <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;">
+                  Edit picture
+                </button>
+              </div>
+              <div class="ms-3" style="margin-top: 130px;">
+                <h5 class="userName" aria-placeholder="name"> </h5>
+                <p class="region"> </p>
+              </div>
+            </div>
+            <div class="p-4 text-black" style="background-color: #f8f9fa;">
+              <div class="d-flex justify-content-end text-center py-1">
+                <!-- <div>
                       <p class="mb-1 h5">253</p>
                       <p class="small text-muted mb-0">Files</p>
                     </div> -->
-                  </div>
+              </div>
+            </div>
+            <div class="card-body p-4 text-black">
+              <div class="mb-5">
+                <p class="lead fw-normal mb-1">INFO</p>
+                <div class="p-4" style="background-color: #f8f9fa;">
+
+                  <!-- 
+                  <div class="row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                    </div>
+
+                  </div> -->
+                  <form class="row g-3" action="/update_profile" method="POST">
+                    <div class="col-md-12">
+                      <label for="userName" class="form-label">Username</label>
+                      <input type="text" class="form-control" id="userName" name="userName" value=<%= username %>>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="firstName" class="form-label">First name</label>
+                      <input type="text" class="form-control" id="firstName" name="firstName" value=<%= firstname %>>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="lastName" class="form-label">Last name</label>
+                      <input type="text" class="form-control" id="lastName" name="lastName" value=<%= lastname %>>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputEmail" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="inputEmail" name="inputEmail" value=<%= email %>>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputPassword" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="inputPassword" name="inputPassword"
+                        value=<%= password %>>
+                    </div>
+                    <div class="col-12">
+                      <label for="inputAddress" class="form-label">Address</label>
+                      <input type="text" class="form-control" id="inputAddress" name="inputAddress"
+                        placeholder="1234 Main St" value=<%= address %>>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="inputCity" class="form-label">City</label>
+                      <input type="text" class="form-control" id="inputCity" name="inputCity" value=<%= city %>>
+                    </div>
+                    <div class="col-md-2">
+                      <label for="inputZip" class="form-label">Zip</label>
+                      <input type="text" class="form-control" id="inputZip" name="inputZip" value=<%= zip %>>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="inputNumber" class="form-label">Phone number</label>
+                      <input type="text" class="form-control" id="inputNumber" name="inputNumber" value=<%= phone %>>
+                    </div>
+                    <!-- <div class="wrap-input100 validate-input" data-validate="Phone is required">
+                      <input class="input100" id="phone" type="text" name="phone" placeholder="Phone">
+                      <label class="label-input100" for="phone">
+                        <span class="lnr lnr-phone-handset"></span>
+                      </label>
+                    </div> -->
+
+                    <br>
+                    <br>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                  </form>
+
                 </div>
-                <div class="card-body p-4 text-black">
-                  <div class="mb-5">
-                    <p class="lead fw-normal mb-1">INFO</p>
-                    <div class="p-4" style="background-color: #f8f9fa;">
-
-
-<div class="row">
-    <div class="col">
-      <input type="text" class="form-control" placeholder="First name" aria-label="First name">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-    </div>
-
-  </div>
-  <form class="row g-3">
-    <div class="col-md-6">
-      <label for="inputEmail4" class="form-label">Email</label>
-      <input type="email" class="form-control" id="inputEmail4">
-    </div>
-    <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">Password</label>
-      <input type="password" class="form-control" id="inputPassword4">
-    </div>
-    <div class="col-12">
-      <label for="inputAddress" class="form-label">Address</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-    </div>
-    <div class="col-12">
-      <label for="inputAddress2" class="form-label">Address 2</label>
-      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-    </div>
-    <div class="col-md-6">
-      <label for="inputCity" class="form-label">City</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="col-md-2">
-      <label for="inputZip" class="form-label">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
-    <div class="wrap-input100 validate-input" data-validate="Phone is required">
-      <input class="input100" id="phone" type="text" name="phone" placeholder="Phone">
-      <label class="label-input100" for="phone">
-      <span class="lnr lnr-phone-handset"></span>
-      </label>
-      </div>
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Update</button>
-    </div>
-  </form>
-  
-              </div> 
-                  </div>
-                  <!-- <div class="d-flex justify-content-between align-items-center mb-4">
+              </div>
+              <!-- <div class="d-flex justify-content-between align-items-center mb-4">
                     <p class="lead fw-normal mb-0">Saved Code</p>
                     <span data-modal-target="#modal1" class="load">Show all</span>
 
                   </div> -->
-                  <!-- new code 3 -->
-                </div>
-              </div>
-                </div>
-              </div>
+              <!-- new code 3 -->
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
 
-      
 
-    <script src="js/userProfile.js" type="text/javascript" charset="utf-8"></script>
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
-    </script>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    
+  <!-- <script src="js/userProfile.js" type="text/javascript" charset="utf-8"></script> -->
 
-<script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+  </script>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+
+  <script>
     AOS.init();
-</script>
+  </script>
 </body>
+
 </html>
