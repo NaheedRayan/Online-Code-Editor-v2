@@ -29,7 +29,7 @@ class DbServices{
     async getAllData(){
         try {
             const response = await new Promise((resolve, reject)=>{
-                const query = "SELECT * FROM User" ;
+                const query = "SELECT * FROM user" ;
                 db.query(query , (err, results)=>{
                     if(err) reject(new Error(err.message));
                     resolve(results);
@@ -46,7 +46,7 @@ class DbServices{
         try{
             const response = await new Promise((resolve, reject)=>{
                 
-                const query = "SELECT * FROM User WHERE username = ? LIMIT 1";
+                const query = "SELECT * FROM user WHERE username = ? LIMIT 1";
                 db.query(query , [username] , (err , results) => {
                     if(err) reject(new Error(err.message));
                     resolve(results);
@@ -62,7 +62,7 @@ class DbServices{
         try{
             const response = await new Promise((resolve, reject)=>{
                 
-                const query = "SELECT * FROM User WHERE id = ? LIMIT 1";
+                const query = "SELECT * FROM user WHERE id = ? LIMIT 1";
                 db.query(query , [id] , (err , results) => {
                     if(err) reject(new Error(err.message));
                     resolve(results);
@@ -79,7 +79,7 @@ class DbServices{
         try{
             const response = await new Promise((resolve, reject)=>{
                 
-                const query = "SELECT * FROM User WHERE email = ? LIMIT 1";
+                const query = "SELECT * FROM user WHERE email = ? LIMIT 1";
                 db.query(query , [email] , (err , results) => {
                     if(err) reject(new Error(err.message));
                     resolve(results);
@@ -98,7 +98,7 @@ class DbServices{
         try{
             const response = await new Promise((resolve, reject)=>{
                 
-                const query = "SELECT * FROM User WHERE username = ? LIMIT 1";
+                const query = "SELECT * FROM user WHERE username = ? LIMIT 1";
                 db.query(query , [username] , (err , results) => {
                     if(err) reject(new Error(err.message));
                     resolve(results);
@@ -114,7 +114,7 @@ class DbServices{
         try{
             const response = await new Promise((resolve, reject)=>{
                 
-                const query = "SELECT * FROM User WHERE (username = ? OR email = ?) AND password = ? LIMIT 1";
+                const query = "SELECT * FROM user WHERE (username = ? OR email = ?) AND password = ? LIMIT 1";
                 db.query(query , [username_or_email , username_or_email, password] , (err , results) => {
                     if(err) reject(new Error(err.message));
                     resolve(results);
@@ -132,7 +132,7 @@ class DbServices{
     async saveNewUserData(userData){
         try {
             const response = await new Promise((resolve, reject)=>{
-                const query = "INSERT INTO User (username, email ,password) VALUES ?" ;
+                const query = "INSERT INTO user (username, email ,password) VALUES ?" ;
                 db.query(query , [userData] , (err , results) => {
                     if(err) reject(new Error(err.message));
                     resolve(results);
@@ -150,7 +150,7 @@ class DbServices{
         try{
             const response = await new Promise((resolve, reject)=>{
                 
-                const query = "SELECT * FROM File_data WHERE id = ?";
+                const query = "SELECT * FROM file_data WHERE id = ?";
                 db.query(query , [user_id] , (err , results) => {
                     if(err) reject(new Error(err.message));
                     resolve(results);
@@ -168,7 +168,7 @@ class DbServices{
         try{
             const response = await new Promise((resolve, reject)=>{
                 
-                const query = "DELETE FROM File_data WHERE (id = ? AND file_id =?) ";
+                const query = "DELETE FROM file_data WHERE (id = ? AND file_id =?) ";
                 db.query(query , [user_id,file_id] , (err , results) => {
                     if(err) reject(new Error(err.message));
                     resolve(results);
@@ -188,7 +188,7 @@ class DbServices{
         try {
             const response = await new Promise((resolve, reject)=>{
                 
-                const query = "INSERT INTO File_data (file_name, file_data ,id) VALUES (?,?,?)" ;
+                const query = "INSERT INTO file_data (file_name, file_data ,id) VALUES (?,?,?)" ;
                 db.query(query , [file_name , data , user_id] , (err , results) => {
                     if(err) reject(new Error(err.message));
                     resolve(results);
@@ -209,7 +209,7 @@ class DbServices{
         try {
             const response = await new Promise((resolve, reject)=>{
                 
-                const query = "UPDATE File_data SET file_data = ? WHERE file_id = ?" ;
+                const query = "UPDATE file_data SET file_data = ? WHERE file_id = ?" ;
                 db.query(query , [ data , file_id] , (err , results) => {
                     if(err) reject(new Error(err.message));
                     resolve(results);
@@ -230,7 +230,7 @@ class DbServices{
         try {
             const response = await new Promise((resolve, reject)=>{
                 
-                const query = "UPDATE User SET  username = ? , first_name = ? , last_name = ? , email = ? , password = ? , address = ? , city = ? ,zip = ? , phone = ?  WHERE id = ?" ;
+                const query = "UPDATE user SET  username = ? , first_name = ? , last_name = ? , email = ? , password = ? , address = ? , city = ? ,zip = ? , phone = ?  WHERE id = ?" ;
                 db.query(query , [ username , firstname , lastname , email , password , address , city , zip , phone , id] , (err , results) => {
                     if(err) reject(new Error(err.message));
                     resolve(results);
