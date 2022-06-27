@@ -87,8 +87,9 @@ document.querySelector(".run_button").addEventListener("click", (e) => {
     console.log(data)
 
     // let server_link = "http://localhost:8080/submit" ;
+    let server_link = "http://localhost:9090/submit" ;
     // let server_link = "http://52.172.231.206:8080/submit";
-    let server_link = "https://52.172.231.206:8080/submit";
+    // let server_link = "https://52.172.231.206:8080/submit";
 
     fetch(server_link, {
         method: "POST",
